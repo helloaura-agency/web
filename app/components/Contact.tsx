@@ -51,7 +51,7 @@ export function Contact() {
             <span className="text-sm font-medium">CONTACT</span>
           </div>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Let's Create Something
+            Let&apos;s Create Something
             <span className="block bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               Extraordinary Together
             </span>
