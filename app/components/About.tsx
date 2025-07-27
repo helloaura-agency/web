@@ -56,7 +56,7 @@ export function About() {
           <div>
             <div className="prose prose-invert max-w-none">
               <p className="text-xl text-gray-300 leading-relaxed mb-8">
-                We're not your typical marketing agency. We're a collective of creative thinkers, 
+                We&apos;re not your typical marketing agency. We&apos;re a collective of creative thinkers, 
                 digital strategists, and brand builders who understand that real connections matter 
                 more than just clicks and impressions.
               </p>
@@ -68,7 +68,7 @@ export function About() {
               </p>
 
               <p className="text-lg text-gray-400 leading-relaxed mb-8">
-                Whether it's digital campaigns, social media strategy, content creation, or 
+                Whether it&apos;s digital campaigns, social media strategy, content creation, or 
                 complete brand overhauls, our work is guided by one principle: authentic impact.
               </p>
             </div>

@@ -43,7 +43,7 @@ export function Hero() {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-300 dark:text-gray-300 light:text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed">
-            We're not your typical marketing agency. We're a collective of creative thinkers,
+            We&apos;re not your typical marketing agency. We&apos;re a collective of creative thinkers,
             digital strategists, and brand builders who understand that real connections matter
             more than just clicks and impressions.
           </p>
@@ -75,8 +75,8 @@ export function Hero() {
           {/* Philosophy statement */}
           <div className="max-w-2xl mx-auto">
             <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 text-lg italic">
-              "We don't follow trends — we set them. We don't settle for good enough —
-              we dig deeper, think sharper, and create smarter."
+              &ldquo;We don&apos;t follow trends — we set them. We don&apos;t settle for good enough —
+              we dig deeper, think sharper, and create smarter.&rdquo;
             </p>
           </div>
         </div>

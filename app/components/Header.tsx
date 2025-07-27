@@ -1,8 +1,8 @@
 'use client';
-import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import Image from "next/image";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#home" className="flex items-center">
-              <img src="/logo.png" alt="" className="h-8 w-auto" />
+              <Image src="/logo.png" alt="Hello Aura Logo" className="h-8 w-auto" width={120} height={32} priority />
             </a>
           </div>
 

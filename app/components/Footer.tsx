@@ -1,5 +1,4 @@
 'use client';
-import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { 
   Mail, 
@@ -11,6 +10,7 @@ import {
   Linkedin,
   ArrowUp
 } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const footerLinks = {
@@ -65,7 +65,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-             <img src="/logo.png" alt="logo" className="h-8 w-auto mb-6" /> 
+             <Image src="/logo.png" alt="Hello Aura Logo" className="h-8 w-auto mb-6" width={120} height={32} priority /> 
               <p className="text-gray-400 mb-6 leading-relaxed">
                 We create digital experiences that inspire, engage, and drive authentic impact. 
                 Your brand story is our passion.
@@ -170,7 +170,7 @@ export function Footer() {
         {/* Brand Statement */}
         <div className="text-center mt-8 pt-8 border-t border-white/10">
           <p className="text-gray-500 text-sm italic">
-            "We don't follow trends — we set them. We don't settle for good enough — we dig deeper, think sharper, and create smarter."
+            &ldquo;We don&apos;t follow trends — we set them. We don&apos;t settle for good enough — we dig deeper, think sharper, and create smarter.&rdquo;
           </p>
         </div>
       </div>

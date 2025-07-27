@@ -120,7 +120,7 @@ export function Services() {
         <div className="text-center">
           <div className="max-w-2xl mx-auto mb-8">
             <p className="text-gray-300 dark:text-gray-300 light:text-gray-700 text-lg mb-8">
-              Ready to transform your brand's digital presence? Let's create something extraordinary together.
+              Ready to transform your brand&apos;s digital presence? Let&apos;s create something extraordinary together.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

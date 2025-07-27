@@ -57,8 +57,8 @@ export function Contact() {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your brand's story? Get in touch with us today 
-            and let's discuss how we can bring your vision to life.
+            Ready to transform your brand&apos;s story? Get in touch with us today 
+            and let&apos;s discuss how we can bring your vision to life.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export function Contact() {
                 Start Your Brand Journey
               </CardTitle>
               <CardDescription className="text-lg text-gray-300">
-                Tell us about your project and we'll get back to you within 4 hours.
+                Tell us about your project and we&apos;ll get back to you within 4 hours.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -150,7 +150,7 @@ export function Contact() {
                 <Label htmlFor="message" className="text-gray-300">Tell Us Your Story</Label>
                 <Textarea 
                   id="message" 
-                  placeholder="What's your brand story? What are your goals? How can we help you make an impact?"
+                  placeholder="What&apos;s your brand story? What are your goals? How can we help you make an impact?"
                   className="min-h-[120px] bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-white/40"
                 />
               </div>
@@ -169,8 +169,8 @@ export function Contact() {
                 Get In Touch
               </h3>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                We're here to help you succeed. Whether you have a specific project in mind 
-                or just want to explore possibilities, we'd love to hear from you and learn about your brand story.
+                We&apos;re here to help you succeed. Whether you have a specific project in mind 
+                or just want to explore possibilities, we&apos;d love to hear from you and learn about your brand story.
               </p>
             </div>
 
@@ -207,7 +207,7 @@ export function Contact() {
                 </div>
                 <p className="text-gray-300 mb-6">
                   For immediate assistance or quick questions, reach out to us on WhatsApp. 
-                  We're available for quick consultations and project discussions.
+                  We&apos;re available for quick consultations and project discussions.
                 </p>
                 <Button
                   asChild
@@ -232,12 +232,12 @@ export function Contact() {
                 Ready to Transform Your Brand?
               </h4>
               <p className="text-gray-300 mb-6">
-                Let's turn your vision into reality. We're not just a service provider — 
-                we're your partner, creative ally, and biggest believer.
+                Let&apos;s turn your vision into reality. We&apos;re not just a service provider — 
+                we&apos;re your partner, creative ally, and biggest believer.
               </p>
               <p className="text-sm text-gray-400 italic">
-                "At Hello Aura, we're more than just a service provider. 
-                We're your partner, your creative ally, and your biggest believer."
+                &ldquo;At Hello Aura, we&apos;re more than just a service provider. 
+                We&apos;re your partner, your creative ally, and your biggest believer.&rdquo;
               </p>
             </div>
           </div>

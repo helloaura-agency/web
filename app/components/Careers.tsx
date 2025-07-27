@@ -53,7 +53,7 @@ export function Careers() {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            At Hello Aura, we're not just building brands — we're building careers, 
+            At Hello Aura, we&apos;re not just building brands — we&apos;re building careers, 
             fostering creativity, and creating an environment where talent thrives.
           </p>
         </div>
@@ -93,7 +93,7 @@ export function Careers() {
             Current Opportunities
           </h3>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-12">
-            We're always looking for passionate, creative individuals to join our growing team. 
+            We&apos;re always looking for passionate, creative individuals to join our growing team. 
             Check out our current openings or reach out to us about future opportunities.
           </p>
           
@@ -126,7 +126,7 @@ export function Careers() {
             </h3>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               Join our team of creative thinkers, digital strategists, and brand builders. 
-              Let's create something extraordinary together.
+              Let&apos;s create something extraordinary together.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 

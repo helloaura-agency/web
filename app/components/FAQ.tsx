@@ -11,7 +11,7 @@ export function FAQ() {
     },
     {
       question: "What makes Hello Aura different from other agencies?",
-      answer: "We combine creative storytelling with data-driven strategies. Our team works closely with you to build custom campaigns that are both aesthetically strong and performance-focused. Every project is backed by insights, transparency, and measurable results. We're not just a service provider - we're your creative partner and biggest believer."
+      answer: "We combine creative storytelling with data-driven strategies. Our team works closely with you to build custom campaigns that are both aesthetically strong and performance-focused. Every project is backed by insights, transparency, and measurable results. We&apos;re not just a service provider - we&apos;re your creative partner and biggest believer."
     },
     {
       question: "How do I get started with Hello Aura?",
@@ -91,7 +91,7 @@ export function FAQ() {
               Still Have Questions?
             </h3>
             <p className="text-gray-300 mb-6">
-              Can't find the answer you're looking for? Our team is here to help you with any questions about our services, process, or how we can help your brand grow.
+              Can&apos;t find the answer you&apos;re looking for? Our team is here to help you with any questions about our services, process, or how we can help your brand grow.
             </p>
             <a
               href="https://wa.me/971543097783"

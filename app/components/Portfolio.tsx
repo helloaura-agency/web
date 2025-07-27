@@ -1,8 +1,7 @@
 'use client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
-import { ExternalLink, TrendingUp, Eye, Users } from "lucide-react";
+import { ExternalLink, TrendingUp } from "lucide-react";
 
 export function Portfolio() {
   const portfolioItems = [
@@ -79,8 +78,8 @@ export function Portfolio() {
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             At Hello Aura, we bring ideas to life with strategy, creativity, and precision. 
-            Our portfolio reflects the diverse range of clients we've worked with and the 
-            impactful solutions we've delivered.
+            Our portfolio reflects the diverse range of clients we&apos;ve worked with and the 
+            impactful solutions we&apos;ve delivered.
           </p>
         </div>
 
