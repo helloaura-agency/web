@@ -66,17 +66,18 @@ export function Portfolio() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
+
         <div className="text-center mb-20">
-          <div className="inline-block px-6 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white border border-white/20 mb-6">
+          <div className="inline-block px-6 py-2 rounded-full bg-white/10 dark:bg-white/10 light:bg-black/10 backdrop-blur-sm text-white dark:text-white light:text-black border border-white/20 dark:border-white/20 light:border-black/20 mb-6">
             <span className="text-sm font-medium">PORTFOLIO</span>
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white dark:text-white light:text-black mb-6 leading-tight">
             Our Creative
-            <span className="block bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-white to-gray-400 dark:from-white dark:to-gray-400 light:from-black light:to-gray-600 bg-clip-text text-transparent">
               Showcase
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-300 dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto leading-relaxed">
             At Hello Aura, we bring ideas to life with strategy, creativity, and precision. 
             Our portfolio reflects the diverse range of clients we&apos;ve worked with and the 
             impactful solutions we&apos;ve delivered.
@@ -86,41 +87,41 @@ export function Portfolio() {
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {portfolioItems.map((item, index) => (
-            <Card key={index} className="group bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-500 hover:shadow-2xl hover:shadow-white/10 hover:transform hover:scale-105">
+            <Card key={index} className="group bg-gradient-to-b from-white/10 to-white/5 light:from-black/10 light:to-black/5 backdrop-blur-sm border border-white/20 light:border-black/20 hover:border-white/40 light:hover:border-black/40 transition-all duration-500 hover:shadow-2xl hover:shadow-white/10 light:hover:shadow-black/10 hover:transform hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between mb-4">
-                  <Badge variant="outline" className="text-xs text-white border-white/30">
+                  <Badge variant="outline" className="text-xs text-white light:text-black border-white/30 light:border-black/30">
                     {item.industry}
                   </Badge>
-                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors duration-300" />
+                  <ExternalLink className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-600 group-hover:text-white transition-colors duration-300" />
                 </div>
-                <CardTitle className="text-xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
+                <CardTitle className="text-xl font-bold text-white light:text-black group-hover:text-gray-200 transition-colors duration-300">
                   {item.title}
                 </CardTitle>
-                <CardDescription className="text-gray-300 mb-3">
+                <CardDescription className="text-gray-300 dark:text-gray-400 light:text-gray-400 mb-3">
                   {item.description}
                 </CardDescription>
-                <div className="text-sm text-gray-400 mb-3">
+                <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600 mb-3">
                   <span className="font-medium">Service:</span> {item.service}
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 {/* Key Outcome */}
-                <div className="flex items-center p-3 bg-white/5 rounded-lg border border-white/10">
-                  <TrendingUp className="w-5 h-5 text-white mr-3" />
+                <div className="flex items-center p-3 bg-white/5 light:bg-black/5 rounded-lg border border-white/10">
+                  <TrendingUp className="w-5 h-5 text-white light:text-black mr-3" />
                   <div>
-                    <div className="text-sm text-gray-400">Key Result</div>
-                    <div className="text-white font-semibold">{item.outcome}</div>
+                    <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600">Key Result</div>
+                    <div className="text-white light:text-black font-semibold">{item.outcome}</div>
                   </div>
                 </div>
 
                 {/* Metrics */}
                 <div className="space-y-2">
-                  <div className="text-sm text-gray-400 font-medium">Metrics</div>
+                  <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600 font-medium">Metrics</div>
                   <div className="grid grid-cols-1 gap-2">
                     {item.metrics.map((metric, metricIndex) => (
-                      <div key={metricIndex} className="flex items-center text-sm text-gray-300">
-                        <div className="w-2 h-2 bg-white/60 rounded-full mr-3"></div>
+                      <div key={metricIndex} className="flex items-center text-sm text-gray-300 dark:text-gray-400 light:text-gray-600">
+                        <div className="w-2 h-2 bg-white/60 light:bg-black/60 rounded-full mr-3"></div>
                         {metric}
                       </div>
                     ))}

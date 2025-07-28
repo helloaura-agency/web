@@ -74,15 +74,15 @@ export function Footer() {
             
             {/* Contact Info */}
             <div className="space-y-3">
-              <div className="flex items-center text-gray-400 hover:text-white transition-colors duration-200">
+              <div className="flex items-center text-gray-400 hover:text-white light:hover:text-black transition-colors duration-200">
                 <Mail className="w-4 h-4 mr-3 flex-shrink-0" />
                 <span className="text-sm">hello@helloaura.agency</span>
               </div>
-              <div className="flex items-center text-gray-400 hover:text-white transition-colors duration-200">
+              <div className="flex items-center text-gray-400 hover:text-white light:hover:text-black transition-colors duration-200">
                 <Phone className="w-4 h-4 mr-3 flex-shrink-0" />
                 <span className="text-sm">+971 54 309 7783</span>
               </div>
-              <div className="flex items-center text-gray-400 hover:text-white transition-colors duration-200">
+              <div className="flex items-center text-gray-400 hover:text-white light:hover:text-black transition-colors duration-200">
                 <MapPin className="w-4 h-4 mr-3 flex-shrink-0" />
                 <span className="text-sm">Calicut, India & Dubai, UAE</span>
               </div>
@@ -98,7 +98,7 @@ export function Footer() {
                   <li key={index}>
                     <a 
                       href={item.href}
-                      className="text-gray-400 hover:text-white transition-colors duration-200 text-sm block"
+                      className="text-gray-400 hover:text-white light:hover:text-black transition-colors duration-200 text-sm block"
                     >
                       {item.label}
                     </a>
@@ -148,9 +148,9 @@ export function Footer() {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110 border border-white/20 hover:border-white/40"
+                  className="w-10 h-10 bg-white/10 light:bg-black/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110 border border-white/20 hover:border-white/40"
                 >
-                  <Icon className="w-5 h-5 text-white" />
+                  <Icon className="w-5 h-5 text-white light:text-black" />
                 </a>
               );
             })}
@@ -158,7 +158,7 @@ export function Footer() {
             {/* Back to Top Button */}
             <button
               onClick={scrollToTop}
-              className="w-10 h-10 bg-white/10 hover:bg-white text-black rounded-lg flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110 border border-white/20 hover:border-white ml-4"
+              className="w-10 h-10 cursor-pointer bg-white/10 light:bg-black/10 hover:bg-white text-black rounded-lg flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110 border border-white/20 hover:border-white ml-4"
               aria-label="Back to top"
             >
               <ArrowUp className="w-5 h-5" />

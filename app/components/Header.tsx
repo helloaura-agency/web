@@ -1,7 +1,7 @@
 'use client';
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { ThemeToggle } from "./ThemeToggle";
+// import { ThemeToggle } from "./ThemeToggle";
 import Image from "next/image";
 
 export function Header() {
@@ -42,7 +42,7 @@ export function Header() {
 
           {/* CTA Button and Theme Toggle */}
           <div className="hidden md:flex items-center space-x-4">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             {/* <Button className="bg-white cursor-pointer text-black hover:bg-gray-200 dark:bg-white dark:text-black dark:hover:bg-gray-200 light:bg-black light:text-white light:hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
               Get Started
             </Button> */}
@@ -50,7 +50,7 @@ export function Header() {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-white dark:hover:text-white light:hover:text-black"
