@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-black dark:bg-black light:bg-white overflow-hidden transition-colors duration-300">
+    <section id="home" title="Home" className="relative min-h-screen flex items-center justify-center bg-black dark:bg-black light:bg-white overflow-hidden transition-colors duration-300">
       {/* Grainy gradient background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 dark:from-gray-900 dark:via-black dark:to-gray-800 light:from-gray-50 light:via-white light:to-gray-100 opacity-80"></div>
@@ -55,13 +55,15 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <Button
-              size="lg"
-              className="bg-white cursor-pointer text-black hover:bg-gray-200 dark:bg-white dark:text-black dark:hover:bg-gray-200 light:bg-black light:text-white light:hover:bg-gray-800 text-lg px-8 py-4 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
-            >
-              Start Your Story
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Link href="#contact">
+              <Button
+                size="lg"
+                className="bg-white cursor-pointer text-black hover:bg-gray-200 dark:bg-white dark:text-black dark:hover:bg-gray-200 light:bg-black light:text-white light:hover:bg-gray-800 text-lg px-8 py-4 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+              >
+                Start Your Story
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
             <Link href="#portfolio">
               <Button
                 size="lg"

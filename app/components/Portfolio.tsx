@@ -56,7 +56,7 @@ export function Portfolio() {
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-black dark:bg-black light:bg-gradient-to-b light:from-gray-50 light:to-white relative overflow-hidden transition-colors duration-300">
+    <section id="portfolio" title="Portfolio" className="py-24 bg-black dark:bg-black light:bg-gradient-to-b light:from-gray-50 light:to-white relative overflow-hidden transition-colors duration-300">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-noise opacity-10 dark:opacity-10 light:opacity-3"></div>

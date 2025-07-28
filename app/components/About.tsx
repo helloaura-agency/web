@@ -28,7 +28,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-gray-900 to-black dark:from-gray-900 dark:to-black light:from-gray-50 light:to-white relative overflow-hidden transition-colors duration-300">
+    <section id="about" title="About Us" className="py-24 bg-gradient-to-b from-gray-900 to-black dark:from-gray-900 dark:to-black light:from-gray-50 light:to-white relative overflow-hidden transition-colors duration-300">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-noise opacity-10 dark:opacity-10 light:opacity-3"></div>

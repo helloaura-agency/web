@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.helloaura.agency'),
-  title: 'Hello Aura | Marketing Agency | Digital strategists | Brand builders',
+  title: 'Hello Aura | Digital strategists || Advertising & Marketing | Brand builders',
   description:
-    'Collective of creative thinkers, digital strategists, and brand builders who understand that real connections matter more than just clicks and impressions',
+    'Digital Marketing | Collective of creative thinkers, digital strategists, and brand builders who understand that real connections matter more than just clicks and impressions',
   openGraph: {
-    title: 'Hello Aura | Marketing Agency | Digital strategists | Brand builders',
+    title: 'Hello Aura | | Advertising & Marketing | Digital strategists | Brand builders',
     description:
       'Digital Marketing | Collective of creative thinkers, digital strategists, and brand builders who understand that real connections matter more than just clicks and impressions',
     url: 'https://www.helloaura.agency',

@@ -40,7 +40,7 @@ export function FAQ() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-black to-gray-900 dark:from-black dark:to-gray-900 light:from-gray-50 light:to-white relative overflow-hidden transition-colors duration-300">
+    <section title="FAQ" id="faq" className="py-24 bg-gradient-to-b from-black to-gray-900 dark:from-black dark:to-gray-900 light:from-gray-50 light:to-white relative overflow-hidden transition-colors duration-300">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-noise opacity-10 dark:opacity-10 light:opacity-3"></div>

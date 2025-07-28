@@ -36,7 +36,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-black to-gray-900 dark:from-black dark:to-gray-900 light:from-white light:to-gray-50 relative overflow-hidden transition-colors duration-300">
+    <section id="contact" title="Contact Us" className="py-24 bg-gradient-to-b from-black to-gray-900 dark:from-black dark:to-gray-900 light:from-white light:to-gray-50 relative overflow-hidden transition-colors duration-300">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-noise opacity-10 dark:opacity-10 light:opacity-3"></div>

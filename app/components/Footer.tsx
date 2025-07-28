@@ -43,7 +43,7 @@ export function Footer() {
   const socialLinks = [
     // { icon: Facebook, href: "#", label: "Facebook" },
     // { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/helloaura.ae", label: "Instagram" },
     { icon: Linkedin, href: "https://www.linkedin.com/company/helloaura/", label: "LinkedIn" }
   ];
 
@@ -84,8 +84,7 @@ export function Footer() {
               </div>
               <div className="flex items-center text-gray-400 hover:text-white transition-colors duration-200">
                 <MapPin className="w-4 h-4 mr-3 flex-shrink-0" />
-                <span className="text-sm">Calicut, India</span><br/>
-                <span className="text-sm">Dubai, UAE</span>
+                <span className="text-sm">Calicut, India & Dubai, UAE</span>
               </div>
             </div>
           </div>
