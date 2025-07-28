@@ -46,79 +46,80 @@ export function Contact() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
+
         <div className="text-center mb-20">
-          <div className="inline-block px-6 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white border border-white/20 mb-6">
+          <div className="inline-block px-6 py-2 rounded-full bg-white/10 dark:bg-white/10 light:bg-black/10 backdrop-blur-sm text-white dark:text-white light:text-black border border-white/20 dark:border-white/20 light:border-black/20 mb-6">
             <span className="text-sm font-medium">CONTACT</span>
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white dark:text-white light:text-black mb-6 leading-tight">
             Let&apos;s Create Something
-            <span className="block bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-white to-gray-400 dark:from-white dark:to-gray-400 light:from-black light:to-gray-600 bg-clip-text text-transparent">
               Extraordinary Together
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your brand&apos;s story? Get in touch with us today 
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Ready to transform your brand&apos;s story? Get in touch with us today
             and let&apos;s discuss how we can bring your vision to life.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Form */}
-          <Card className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-sm border border-white/20 shadow-2xl">
+          <Card className="bg-gradient-to-b from-white/10 to-white/5 light:from-black/10 light:to-black/5 backdrop-blur-sm border border-white/20 light:border-black/20 shadow-2xl">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold text-white">
+              <CardTitle className="text-2xl font-bold text-white light:text-black">
                 Start Your Brand Journey
               </CardTitle>
-              <CardDescription className="text-lg text-gray-300">
+              <CardDescription className="text-lg text-gray-300 light:text-gray-500">
                 Tell us about your project and we&apos;ll get back to you within 4 hours.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="firstName" className="text-gray-300">First Name</Label>
-                  <Input 
-                    id="firstName" 
-                    placeholder="John" 
-                    className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-white/40"
+                  <Label htmlFor="firstName" className="light:text-gray-400 text-gray-300">First Name</Label>
+                  <Input
+                    id="firstName"
+                    placeholder="John"
+                    className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black  placeholder-gray-400 focus:border-white/40 light:focus:border-black/40"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="lastName" className="text-gray-300">Last Name</Label>
-                  <Input 
-                    id="lastName" 
-                    placeholder="Doe" 
-                    className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-white/40"
+                  <Label htmlFor="lastName" className="light:text-gray-400 text-gray-300">Last Name</Label>
+                  <Input
+                    id="lastName"
+                    placeholder="Doe"
+                    className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40"
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-gray-300">Email</Label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  placeholder="john@example.com" 
-                  className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-white/40"
+                <Label htmlFor="email" className="light:text-gray-400 text-gray-300">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="john@example.com"
+                  className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40"
                 />
               </div>
-              
+
               <div className="space-y-2">
-                <Label htmlFor="company" className="text-gray-300">Company</Label>
-                <Input 
-                  id="company" 
-                  placeholder="Your Company" 
-                  className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-white/40"
+                <Label htmlFor="company" className="light:text-gray-400 text-gray-300">Company</Label>
+                <Input
+                  id="company"
+                  placeholder="Your Company"
+                  className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40"
                 />
               </div>
-              
+
               <div className="space-y-2">
-                <Label htmlFor="service" className="text-gray-300">Service Needed</Label>
+                <Label htmlFor="service" className="light:text-gray-400 text-gray-300">Service Needed</Label>
                 <Select>
-                  <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                  <SelectTrigger className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black">
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
-                  <SelectContent className="bg-black border-white/20">
+                  <SelectContent className="bg-black border-white/20 light:border-black/20">
                     <SelectItem value="social-media">Social Media Marketing</SelectItem>
                     <SelectItem value="performance-marketing">Performance Marketing</SelectItem>
                     <SelectItem value="web-development">Web Development UI/UX</SelectItem>
@@ -129,14 +130,14 @@ export function Contact() {
                   </SelectContent>
                 </Select>
               </div>
-              
+
               <div className="space-y-2">
-                <Label htmlFor="budget" className="text-gray-300">Project Budget</Label>
+                <Label htmlFor="budget" className="light:text-gray-400 text-gray-300">Project Budget</Label>
                 <Select>
-                  <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                  <SelectTrigger className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black">
                     <SelectValue placeholder="Select budget range" />
                   </SelectTrigger>
-                  <SelectContent className="bg-black border-white/20">
+                  <SelectContent className="bg-black border-white/20 light:border-black/20">
                     <SelectItem value="5k-15k">$5,000 - $15,000</SelectItem>
                     <SelectItem value="15k-30k">$15,000 - $30,000</SelectItem>
                     <SelectItem value="30k-60k">$30,000 - $60,000</SelectItem>
@@ -145,17 +146,17 @@ export function Contact() {
                   </SelectContent>
                 </Select>
               </div>
-              
+
               <div className="space-y-2">
-                <Label htmlFor="message" className="text-gray-300">Tell Us Your Story</Label>
-                <Textarea 
-                  id="message" 
+                <Label htmlFor="message" className="light:text-gray-400 text-gray-300">Tell Us Your Story</Label>
+                <Textarea
+                  id="message"
                   placeholder="What&apos;s your brand story? What are your goals? How can we help you make an impact?"
-                  className="min-h-[120px] bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-white/40"
+                  className="min-h-[120px] bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40"
                 />
               </div>
-              
-              <Button className="w-full cursor-pointer bg-white text-black hover:bg-gray-200 text-lg py-6 transition-all duration-300 transform hover:scale-105">
+
+              <Button className="w-full cursor-pointer bg-white light:bg-black text-black light:text-white hover:bg-gray-200 text-lg py-6 transition-all duration-300 transform hover:scale-105">
                 Send Message
                 <Send className="ml-2 w-5 h-5" />
               </Button>
@@ -165,11 +166,11 @@ export function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">
+              <h3 className="text-2xl font-bold text-white light:text-black mb-6">
                 Get In Touch
               </h3>
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                We&apos;re here to help you succeed. Whether you have a specific project in mind 
+              <p className="text-lg text-gray-300 light:text-gray-400 mb-8 leading-relaxed">
+                We&apos;re here to help you succeed. Whether you have a specific project in mind
                 or just want to explore possibilities, we&apos;d love to hear from you and learn about your brand story.
               </p>
             </div>
@@ -179,15 +180,15 @@ export function Contact() {
                 const Icon = info.icon;
                 return (
                   <div key={index} className="group">
-                    <div className="flex items-start space-x-4 p-6 bg-white/5 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 hover:bg-white/10">
+                    <div className="flex items-start space-x-4 p-6 bg-white/5 rounded-xl border border-white/20 light:border-black/20 hover:border-white/30 light:hover:border-black/30  transition-all duration-300 hover:bg-white/10">
                       <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-all duration-300">
-                        <Icon className="w-6 h-6 text-white" />
+                        <Icon className="w-6 h-6 text-white light:text-black" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-white mb-1 group-hover:text-gray-200 transition-colors duration-300">
+                        <h4 className="font-semibold text-white light:text-black mb-1 group-hover:text-gray-200 transition-colors duration-300">
                           {info.title}
                         </h4>
-                        <p className="text-white mb-1">{info.content}</p>
+                        <p className="text-white light:text-black mb-1">{info.content}</p>
                         <p className="text-sm text-gray-400">{info.description}</p>
                       </div>
                     </div>
@@ -197,46 +198,46 @@ export function Contact() {
             </div>
 
             {/* WhatsApp CTA */}
-            <Card className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20">
+            <Card className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 light:border-black/20">
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
-                  <MessageSquare className="w-8 h-8 text-white mr-4" />
-                  <h4 className="text-xl font-bold text-white">
+                  <MessageSquare className="w-8 h-8 text-white light:text-black mr-4" />
+                  <h4 className="text-xl font-bold text-white light:text-black">
                     Prefer WhatsApp?
                   </h4>
                 </div>
-                <p className="text-gray-300 mb-6">
-                  For immediate assistance or quick questions, reach out to us on WhatsApp. 
+                <p className="text-gray-300 light:text-gray-400 mb-6">
+                  For immediate assistance or quick questions, reach out to us on WhatsApp.
                   We&apos;re available for quick consultations and project discussions.
                 </p>
                 <Button
                   asChild
                   variant="outline"
-                  className="border-white/30 cursor-pointer text-white hover:bg-white/10 transition-all duration-300"
+                  className="border-white/30 light:border-black/30 cursor-pointer text-white light:text-black hover:bg-white/10 light:hover:bg-black/10 transition-all duration-300"
                 >
                   <a
-                  href="https://wa.me/971543097783"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                    href="https://wa.me/971543097783"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                  <MessageSquare className="mr-2 w-4 h-4" />
-                  Chat on WhatsApp
+                    <MessageSquare className="mr-2 w-4 h-4" />
+                    Chat on WhatsApp
                   </a>
                 </Button>
               </CardContent>
             </Card>
 
             {/* Partnership CTA */}
-            <div className="text-center p-8 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl border border-white/20">
-              <h4 className="text-xl font-bold text-white mb-4">
+            <div className="text-center p-8 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl border border-white/20 light:border-black/20">
+              <h4 className="text-xl font-bold text-white light:text-black mb-4">
                 Ready to Transform Your Brand?
               </h4>
-              <p className="text-gray-300 mb-6">
-                Let&apos;s turn your vision into reality. We&apos;re not just a service provider — 
+              <p className="text-gray-300 light:text-gray-400 mb-6">
+                Let&apos;s turn your vision into reality. We&apos;re not just a service provider —
                 we&apos;re your partner, creative ally, and biggest believer.
               </p>
-              <p className="text-sm text-gray-400 italic">
-                &ldquo;At Hello Aura, we&apos;re more than just a service provider. 
+              <p className="text-sm text-gray-400 light:text-gray-500 italic">
+                &ldquo;At Hello Aura, we&apos;re more than just a service provider.
                 We&apos;re your partner, your creative ally, and your biggest believer.&rdquo;
               </p>
             </div>

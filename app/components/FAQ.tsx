@@ -49,17 +49,17 @@ export function FAQ() {
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block px-6 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white border border-white/20 mb-6">
+        <div className="text-center mb-20">
+          <div className="inline-block px-6 py-2 rounded-full bg-white/10 dark:bg-white/10 light:bg-black/10 backdrop-blur-sm text-white dark:text-white light:text-black border border-white/20 dark:border-white/20 light:border-black/20 mb-6">
             <span className="text-sm font-medium">FAQ</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white dark:text-white light:text-black mb-6 leading-tight">
             Frequently Asked
-            <span className="block bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-white to-gray-400 dark:from-white dark:to-gray-400 light:from-black light:to-gray-600 bg-clip-text text-transparent">
               Questions
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 light:text-gray-400 max-w-2xl mx-auto">
             Everything you need to know about working with Hello Aura
           </p>
         </div>
@@ -68,15 +68,15 @@ export function FAQ() {
         <div className="mb-16">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
+              <AccordionItem
+                key={index}
                 value={`item-${index}`}
-                className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl px-6 hover:border-white/30 transition-all duration-300"
+                className="bg-white/5 backdrop-blur-sm border border-white/20 light:border-black/20 rounded-xl px-6 hover:border-white/30 light:hover:border-black/30 transition-all duration-300"
               >
-                <AccordionTrigger className="text-white hover:text-gray-200 text-left py-6 hover:no-underline">
+                <AccordionTrigger className="text-white light:text-black hover:text-gray-200 text-left py-6 hover:no-underline">
                   <span className="text-lg font-medium">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-300 pb-6 leading-relaxed">
+                <AccordionContent className="text-gray-300 light:text-gray-500 pb-6 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -86,11 +86,11 @@ export function FAQ() {
 
         {/* Contact CTA */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 light:border-black/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white light:text-black mb-4">
               Still Have Questions?
             </h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 light:text-gray-400 mb-6">
               Can&apos;t find the answer you&apos;re looking for? Our team is here to help you with any questions about our services, process, or how we can help your brand grow.
             </p>
             <a
@@ -98,12 +98,12 @@ export function FAQ() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button 
-              size="lg" 
-              className="bg-white cursor-pointer text-black hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+              <Button
+                size="lg"
+                className="bg-white light:bg-black cursor-pointer text-black light:text-white hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
               >
-              <MessageCircle className="mr-2 w-5 h-5" />
-              Get in Touch
+                <MessageCircle className="mr-2 w-5 h-5" />
+                Get in Touch
               </Button>
             </a>
           </div>

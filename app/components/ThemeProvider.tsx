@@ -11,25 +11,25 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
     // Check if there's a saved theme preference
     const savedTheme = localStorage.getItem('hello-aura-theme') as Theme;
     if (savedTheme) {
-      setTheme(savedTheme);
+      setTheme('light');
     } else {
       // Default to dark theme
-      setTheme('dark');
+      setTheme('light');
     }
   }, []);
 
-  useEffect(() => {
-    // Save theme preference and apply to document
-    localStorage.setItem('hello-aura-theme', theme);
-    document.documentElement.classList.remove('light', 'dark');
-    document.documentElement.classList.add(theme);
-  }, [theme]);
+  // useEffect(() => {
+  //   // Save theme preference and apply to document
+  //   localStorage.setItem('hello-aura-theme', theme);
+  //   document.documentElement.classList.remove('light', 'dark');
+  //   document.documentElement.classList.add(theme);
+  // }, [theme]);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
