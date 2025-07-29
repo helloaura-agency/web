@@ -1,12 +1,12 @@
 'use client';
 import { Separator } from "./ui/separator";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
   // Facebook, 
   // Twitter, 
-  Instagram, 
+  Instagram,
   Linkedin,
   ArrowUp
 } from "lucide-react";
@@ -15,29 +15,29 @@ import Image from "next/image";
 export function Footer() {
   const footerLinks = {
     Services: [
-      { label: "Social Media Marketing" , href: "#services" },
+      { label: "Social Media Marketing", href: "#services" },
       { label: "Performance Marketing", href: "#services" },
       { label: "Web Development UI/UX", href: "#services" },
-      { label: "Production & Video" , href: "#services" },
+      { label: "Production & Video", href: "#services" },
       { label: "Creative & Design", href: "#services" },
-      { label: "Branding & Identity" , href: "#services" }
+      { label: "Branding & Identity", href: "#services" }
     ],
     Company: [
       { label: "About Us", href: "#about" },
       // { label: "Our Story", href: "#our-story" },
       // { label: "Careers", href: "#careers" },
       { label: "Portfolio", href: "#portfolio" },
+      { label: "FAQ", href: "#faq" },
       // { label: "Case Studies", href: "#case-studies" },
       // { label: "Blog", href: "#blog" }
     ],
-    Resources: [
-      { label: "FAQ", href: "#faq" },
-      // { label: "Privacy Policy", href: "#privacy" },
-      // { label: "Terms of Service", href: "#terms" },
-      // { label: "Cookie Policy", href: "#cookies" },
-      // { label: "Sitemap", href: "#sitemap" },
-      // { label: "Support", href: "#support" }
-    ]
+    // Resources: [
+    // { label: "Privacy Policy", href: "#privacy" },
+    // { label: "Terms of Service", href: "#terms" },
+    // { label: "Cookie Policy", href: "#cookies" },
+    // { label: "Sitemap", href: "#sitemap" },
+    // { label: "Support", href: "#support" }
+    // ]
   };
 
   const socialLinks = [
@@ -65,26 +65,22 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-             <Image src="/logo.png" alt="Hello Aura Logo" className="h-8 w-auto mb-6" width={120} height={32} priority /> 
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                We create digital experiences that inspire, engage, and drive authentic impact. 
+              <Image src="/logo.png" alt="Hello Aura Logo" className="h-8 w-auto mb-6" width={120} height={32} priority />
+              <p className="text-gray-400 light:text-gray-600 mb-6 leading-relaxed">
+                We create digital experiences that inspire, engage, and drive authentic impact.
                 Your brand story is our passion.
               </p>
             </div>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
-              <div className="flex items-center text-gray-400 hover:text-white light:hover:text-black transition-colors duration-200">
+              <div className="flex items-center text-gray-400 light:text-gray-600 hover:text-white light:hover:text-black transition-colors duration-200">
                 <Mail className="w-4 h-4 mr-3 flex-shrink-0" />
                 <span className="text-sm">hello@helloaura.agency</span>
               </div>
-              <div className="flex items-center text-gray-400 hover:text-white light:hover:text-black transition-colors duration-200">
+              <div className="flex items-center text-gray-400 light:text-gray-600 hover:text-white light:hover:text-black transition-colors duration-200">
                 <Phone className="w-4 h-4 mr-3 flex-shrink-0" />
                 <span className="text-sm">+971 54 309 7783</span>
-              </div>
-              <div className="flex items-center text-gray-400 hover:text-white light:hover:text-black transition-colors duration-200">
-                <MapPin className="w-4 h-4 mr-3 flex-shrink-0" />
-                <span className="text-sm">Calicut, India & Dubai, UAE</span>
               </div>
             </div>
           </div>
@@ -92,13 +88,13 @@ export function Footer() {
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="text-lg font-semibold text-white mb-6">{category}</h4>
+              <h4 className="text-lg font-semibold text-white light:text-black mb-6">{category}</h4>
               <ul className="space-y-3">
                 {links.map((item, index) => (
                   <li key={index}>
-                    <a 
+                    <a
                       href={item.href}
-                      className="text-gray-400 hover:text-white light:hover:text-black transition-colors duration-200 text-sm block"
+                      className="text-gray-400 light:text-gray-600 hover:text-white light:hover:text-black transition-colors duration-200 text-sm block"
                     >
                       {item.label}
                     </a>
@@ -107,6 +103,35 @@ export function Footer() {
               </ul>
             </div>
           ))}
+          <div>
+            <h4 className="text-lg font-semibold text-white light:text-black mb-6">Our Offices</h4>
+            <ul className="space-y-3">
+              <li className="">
+                <div className="space-y-3 border border-white/20 light:border-black/20 p-2 rounded-lg">
+                  <div className="flex items-center text-gray-400 light:text-gray-600 hover:text-white light:hover:text-black transition-colors duration-200">
+                    <MapPin className="w-4 h-4 mr-3 flex-shrink-0" />
+                    <span className="text-sm">210, Sarah Building, Al Garhoud, Dubai, UAE</span>
+                  </div>
+                  <div className="flex items-center text-gray-400 light:text-gray-600 hover:text-white light:hover:text-black transition-colors duration-200">
+                    <Phone className="w-4 h-4 mr-3 flex-shrink-0" />
+                    <span className="text-sm">+971 54 309 7783</span>
+                  </div>
+                </div>
+              </li>
+              <li className="">
+                <div className="space-y-3 border border-white/20 light:border-black/20 p-2 rounded-lg  ">
+                  <div className="flex items-center text-gray-400 light:text-gray-600 hover:text-white light:hover:text-black transition-colors duration-200">
+                    <MapPin className="w-4 h-4 mr-3 flex-shrink-0" />
+                    <span className="text-sm">HiLITE Business Park Calicut, Kerala, India</span>
+                  </div>
+                  <div className="flex items-center text-gray-400 light:text-gray-600 hover:text-white light:hover:text-black transition-colors duration-200">
+                    <Phone className="w-4 h-4 mr-3 flex-shrink-0" />
+                    <span className="text-sm">+91 6282 605 720</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Newsletter Signup */}
@@ -138,7 +163,7 @@ export function Footer() {
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
             © 2025 Hello Aura. All rights reserved. Where stories come to life.
           </div>
-          
+
           {/* Social Links */}
           <div className="flex items-center space-x-4">
             {socialLinks.map((social, index) => {
@@ -154,7 +179,7 @@ export function Footer() {
                 </a>
               );
             })}
-            
+
             {/* Back to Top Button */}
             <button
               onClick={scrollToTop}

@@ -8,6 +8,7 @@ import { FAQ } from "./components/FAQ";
 import { Portfolio } from "./components/Portfolio";
 // import { Careers } from "./components/Careers";
 import { ThemeProvider } from "./components/ThemeProvider";
+import WhatsAppBadge from "./components/WhatsappBadge";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         </main>
         <Footer />
       </div>
+      <WhatsAppBadge />
     </ThemeProvider>
   );
 }
