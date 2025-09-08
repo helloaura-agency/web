@@ -9,24 +9,29 @@ import { Portfolio } from "./components/Portfolio";
 // import { Careers } from "./components/Careers";
 import { ThemeProvider } from "./components/ThemeProvider";
 import WhatsAppBadge from "./components/WhatsappBadge";
+import { SmoothScrollProvider } from "./components/SmoothScrollProvider";
+import { ScrollProgress } from "./components/ScrollProgress";
 
 export default function Home() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-black dark:bg-black light:bg-white transition-colors duration-300">
-        <Header />
-        <main>
-          <Hero />
-          <Services />
-          <About />
-          <Portfolio />
-          <FAQ />
-          {/* <Careers /> */}
-          <Contact />
-        </main>
-        <Footer />
-      </div>
-      <WhatsAppBadge />
+      <SmoothScrollProvider>
+        <ScrollProgress />
+        <div className="min-h-screen bg-black dark:bg-black light:bg-white transition-colors duration-300">
+          <Header />
+          <main>
+            <Hero />
+            <Services />
+            <About />
+            <Portfolio />
+            <FAQ />
+            {/* <Careers /> */}
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+        <WhatsAppBadge />
+      </SmoothScrollProvider>
     </ThemeProvider>
   );
 }

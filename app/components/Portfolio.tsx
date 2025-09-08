@@ -2,6 +2,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { ExternalLink, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
+import { AnimatedSection, StaggeredContainer } from "./AnimatedSection";
 
 export function Portfolio() {
   const portfolioItems = [
@@ -66,8 +68,7 @@ export function Portfolio() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-
-        <div className="text-center mb-20">
+        <AnimatedSection delay={0.1} direction="up" className="text-center mb-20">
           <div className="inline-block px-6 py-2 rounded-full bg-white/10 dark:bg-white/10 light:bg-black/10 backdrop-blur-sm text-white dark:text-white light:text-black border border-white/20 dark:border-white/20 light:border-black/20 mb-6">
             <span className="text-sm font-medium">PORTFOLIO</span>
           </div>
@@ -82,38 +83,46 @@ export function Portfolio() {
             Our portfolio reflects the diverse range of clients we&apos;ve worked with and the 
             impactful solutions we&apos;ve delivered.
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <StaggeredContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" staggerDelay={0.2}>
           {portfolioItems.map((item, index) => (
-            <Card key={index} className="group bg-gradient-to-b from-white/10 to-white/5 light:from-black/10 light:to-black/5 backdrop-blur-sm border border-white/20 light:border-black/20 hover:border-white/40 light:hover:border-black/40 transition-all duration-500 hover:shadow-2xl hover:shadow-white/10 light:hover:shadow-black/10 hover:transform hover:scale-105">
-              <CardHeader className="pb-4">
-                <div className="flex items-center justify-between mb-4">
-                  <Badge variant="outline" className="text-xs text-white light:text-black border-white/30 light:border-black/30">
-                    {item.industry}
-                  </Badge>
-                  <ExternalLink className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-600 group-hover:text-white transition-colors duration-300" />
-                </div>
-                <CardTitle className="text-xl font-bold text-white light:text-black group-hover:text-gray-200 transition-colors duration-300">
-                  {item.title}
-                </CardTitle>
-                <CardDescription className="text-gray-300 dark:text-gray-400 light:text-gray-400 mb-3">
-                  {item.description}
-                </CardDescription>
-                <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600 mb-3">
-                  <span className="font-medium">Service:</span> {item.service}
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {/* Key Outcome */}
-                <div className="flex items-center p-3 bg-white/5 light:bg-black/5 rounded-lg border border-white/10">
-                  <TrendingUp className="w-5 h-5 text-white light:text-black mr-3" />
-                  <div>
-                    <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600">Key Result</div>
-                    <div className="text-white light:text-black font-semibold">{item.outcome}</div>
+            <motion.div
+              key={index}
+              whileHover={{ 
+                y: -8,
+                scale: 1.02,
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <Card className="group bg-gradient-to-b from-white/10 to-white/5 light:from-black/10 light:to-black/5 backdrop-blur-sm border border-white/20 light:border-black/20 hover:border-white/40 light:hover:border-black/40 transition-all duration-500 hover:shadow-2xl hover:shadow-white/10 light:hover:shadow-black/10 h-full">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <Badge variant="outline" className="text-xs text-white light:text-black border-white/30 light:border-black/30">
+                      {item.industry}
+                    </Badge>
+                    <ExternalLink className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-600 group-hover:text-white transition-colors duration-300" />
                   </div>
-                </div>
+                  <CardTitle className="text-xl font-bold text-white light:text-black group-hover:text-gray-200 transition-colors duration-300">
+                    {item.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-300 dark:text-gray-400 light:text-gray-400 mb-3">
+                    {item.description}
+                  </CardDescription>
+                  <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600 mb-3">
+                    <span className="font-medium">Service:</span> {item.service}
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {/* Key Outcome */}
+                  <div className="flex items-center p-3 bg-white/5 light:bg-black/5 rounded-lg border border-white/10">
+                    <TrendingUp className="w-5 h-5 text-white light:text-black mr-3" />
+                    <div>
+                      <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600">Key Result</div>
+                      <div className="text-white light:text-black font-semibold">{item.outcome}</div>
+                    </div>
+                  </div>
 
                 {/* Metrics */}
                 <div className="space-y-2">
@@ -129,8 +138,9 @@ export function Portfolio() {
                 </div>
               </CardContent>
             </Card>
+            </motion.div>
           ))}
-        </div>
+        </StaggeredContainer>
 
         {/* Case Study CTA */}
         {/* <div className="text-center">
