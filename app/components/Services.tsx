@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { AnimatedSection, StaggeredContainer } from "./AnimatedSection";
 
 export function Services() {
   const services = [
@@ -69,7 +71,7 @@ export function Services() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <AnimatedSection delay={0.1} direction="up" className="text-center mb-20">
           <div className="inline-block px-6 py-2 rounded-full bg-white/10 dark:bg-white/10 light:bg-black/10 backdrop-blur-sm text-white dark:text-white light:text-black border border-white/20 dark:border-white/20 light:border-black/20 mb-6">
             <span className="text-sm font-medium">SERVICES</span>
           </div>
@@ -79,45 +81,60 @@ export function Services() {
               Experiences That Move Brands Forward
             </span>
           </h2>
-        </div>
+        </AnimatedSection>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <StaggeredContainer 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          staggerDelay={0.2}
+        >
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Card key={index} className="group bg-black/50 dark:bg-black/50 light:bg-white/95 backdrop-blur-sm border border-white/10 dark:border-white/10 light:border-gray-200/50 hover:border-white/30 dark:hover:border-white/30 light:hover:border-gray-300/80 transition-all duration-500 hover:shadow-2xl hover:shadow-white/5 dark:hover:shadow-white/5 light:hover:shadow-black/5 hover:transform hover:scale-105">
-                <CardHeader className="pb-4">
-                  <div className="w-16 h-16 bg-white/10 dark:bg-white/10 light:bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/20 dark:group-hover:bg-white/20 light:group-hover:bg-black/20 transition-all duration-300 transform group-hover:rotate-6">
-                    <Icon className="w-8 h-8 text-white dark:text-white light:text-black" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold text-white dark:text-white light:text-black group-hover:text-gray-200 dark:group-hover:text-gray-200 light:group-hover:text-gray-800 transition-colors duration-300">
-                    {service.title}
-                  </CardTitle>
-                  <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600 font-medium mb-3">
-                    {service.subtitle}
-                  </div>
-                  <CardDescription className="text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-400 dark:text-gray-400 light:text-gray-600">
-                        <div className="w-2 h-2 bg-white/40 dark:bg-white/40 light:bg-black/40 rounded-full mr-3 group-hover:bg-white/60 dark:group-hover:bg-white/60 light:group-hover:bg-black/60 transition-colors duration-300"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.02,
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <Card className="group bg-black/50 dark:bg-black/50 light:bg-white/95 backdrop-blur-sm border border-white/10 dark:border-white/10 light:border-gray-200/50 hover:border-white/30 dark:hover:border-white/30 light:hover:border-gray-300/80 transition-all duration-500 hover:shadow-2xl hover:shadow-white/5 dark:hover:shadow-white/5 light:hover:shadow-black/5 h-full">
+                  <CardHeader className="pb-4">
+                    <motion.div 
+                      className="w-16 h-16 bg-white/10 dark:bg-white/10 light:bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/20 dark:group-hover:bg-white/20 light:group-hover:bg-black/20 transition-all duration-300"
+                      whileHover={{ rotate: 6 }}
+                    >
+                      <Icon className="w-8 h-8 text-white dark:text-white light:text-black" />
+                    </motion.div>
+                    <CardTitle className="text-2xl font-bold text-white dark:text-white light:text-black group-hover:text-gray-200 dark:group-hover:text-gray-200 light:group-hover:text-gray-800 transition-colors duration-300">
+                      {service.title}
+                    </CardTitle>
+                    <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600 font-medium mb-3">
+                      {service.subtitle}
+                    </div>
+                    <CardDescription className="text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-sm text-gray-400 dark:text-gray-400 light:text-gray-600">
+                          <div className="w-2 h-2 bg-white/40 dark:bg-white/40 light:bg-black/40 rounded-full mr-3 group-hover:bg-white/60 dark:group-hover:bg-white/60 light:group-hover:bg-black/60 transition-colors duration-300"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </motion.div>
             );
           })}
-        </div>
+        </StaggeredContainer>
 
         {/* CTA Section */}
-        <div className="text-center">
+        <AnimatedSection delay={0.4} direction="up" className="text-center">
           <div className="max-w-2xl mx-auto mb-8">
             <p className="text-gray-300 dark:text-gray-300 light:text-gray-700 text-lg mb-8">
               Ready to transform your brand&apos;s digital presence? Let&apos;s create something extraordinary together.
@@ -125,25 +142,37 @@ export function Services() {
           </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="#contact">
-            <Button 
-              size="lg" 
-              className="bg-white cursor-pointer text-black hover:bg-gray-200 dark:bg-white dark:text-black dark:hover:bg-gray-200 light:bg-black light:text-white light:hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
-            >
-              Discuss Your Project
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Button 
+                  size="lg" 
+                  className="bg-white cursor-pointer text-black hover:bg-gray-200 dark:bg-white dark:text-black dark:hover:bg-gray-200 light:bg-black light:text-white light:hover:bg-gray-800 transition-all duration-300"
+                >
+                  Discuss Your Project
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </motion.div>
             </Link>
             <Link href="#portfolio">
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white/30 cursor-pointer dark:border-white/30 light:border-black/30 text-white dark:text-white light:text-black hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-black/10 transition-all duration-300"
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
               >
-              View Portfolio
-            </Button>
-              </Link>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white/30 cursor-pointer dark:border-white/30 light:border-black/30 text-white dark:text-white light:text-black hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-black/10 transition-all duration-300"
+                >
+                View Portfolio
+              </Button>
+              </motion.div>
+            </Link>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
 
       <style jsx>{`

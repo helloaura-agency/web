@@ -2,6 +2,8 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { Button } from "./ui/button";
 import { MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { AnimatedSection, StaggeredContainer } from "./AnimatedSection";
 
 export function FAQ() {
   const faqs = [
@@ -49,7 +51,7 @@ export function FAQ() {
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <AnimatedSection delay={0.1} direction="up" className="text-center mb-20">
           <div className="inline-block px-6 py-2 rounded-full bg-white/10 dark:bg-white/10 light:bg-black/10 backdrop-blur-sm text-white dark:text-white light:text-black border border-white/20 dark:border-white/20 light:border-black/20 mb-6">
             <span className="text-sm font-medium">FAQ</span>
           </div>
@@ -62,52 +64,69 @@ export function FAQ() {
           <p className="text-xl text-gray-300 light:text-gray-400 max-w-2xl mx-auto">
             Everything you need to know about working with Hello Aura
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* FAQ Accordion */}
-        <div className="mb-16">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-white/5 backdrop-blur-sm border border-white/20 light:border-black/20 rounded-xl px-6 hover:border-white/30 light:hover:border-black/30 transition-all duration-300"
-              >
-                <AccordionTrigger className="text-white light:text-black hover:text-gray-200 text-left py-6 hover:no-underline">
-                  <span className="text-lg font-medium">{faq.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-300 light:text-gray-500 pb-6 leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+        <AnimatedSection delay={0.2} direction="up">
+          <div className="mb-16">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                >
+                  <AccordionItem
+                    value={`item-${index}`}
+                    className="bg-white/5 backdrop-blur-sm border border-white/20 light:border-black/20 rounded-xl px-6 hover:border-white/30 light:hover:border-black/30 transition-all duration-300"
+                  >
+                    <AccordionTrigger className="text-white light:text-black hover:text-gray-200 text-left py-6 hover:no-underline">
+                      <span className="text-lg font-medium">{faq.question}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-300 light:text-gray-500 pb-6 leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
+              ))}
+            </Accordion>
+          </div>
+        </AnimatedSection>
 
         {/* Contact CTA */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 light:border-black/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white light:text-black mb-4">
-              Still Have Questions?
-            </h3>
-            <p className="text-gray-300 light:text-gray-400 mb-6">
-              Can&apos;t find the answer you&apos;re looking for? Our team is here to help you with any questions about our services, process, or how we can help your brand grow.
-            </p>
-            <a
-              href="https://wa.me/971543097783"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                className="bg-white light:bg-black cursor-pointer text-black light:text-white hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+        <AnimatedSection delay={0.4} direction="up">
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 light:border-black/20 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-white light:text-black mb-4">
+                Still Have Questions?
+              </h3>
+              <p className="text-gray-300 light:text-gray-400 mb-6">
+                Can&apos;t find the answer you&apos;re looking for? Our team is here to help you with any questions about our services, process, or how we can help your brand grow.
+              </p>
+              <a
+                href="https://wa.me/971543097783"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <MessageCircle className="mr-2 w-5 h-5" />
-                Get in Touch
-              </Button>
-            </a>
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Button
+                    size="lg"
+                    className="bg-white light:bg-black cursor-pointer text-black light:text-white hover:bg-gray-200 transition-all duration-300"
+                  >
+                    <MessageCircle className="mr-2 w-5 h-5" />
+                    Get in Touch
+                  </Button>
+                </motion.div>
+              </a>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
 
       <style jsx>{`
