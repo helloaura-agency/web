@@ -6,7 +6,6 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { FAQ } from "./components/FAQ";
 import { Portfolio } from "./components/Portfolio";
-// import { Careers } from "./components/Careers";
 import { ThemeProvider } from "./components/ThemeProvider";
 import WhatsAppBadge from "./components/WhatsappBadge";
 import { SmoothScrollProvider } from "./components/SmoothScrollProvider";

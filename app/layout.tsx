@@ -48,28 +48,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-          <head>
-      <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "Hello Aura",
-                "url": "https://www.helloaura.agency",
-                "description": 'Digital Marketing | Collective of creative thinkers, digital strategists, and brand builders who understand that real connections matter more than just clicks and impressions',
-                "sameAs": [
-                  "https://www.linkedin.com/company/helloaura/"
-                ]
-              })
-            }}
-          />
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Hello Aura",
+              "url": "https://www.helloaura.agency",
+              "description": 'Digital Marketing | Collective of creative thinkers, digital strategists, and brand builders who understand that real connections matter more than just clicks and impressions',
+              "sameAs": [
+                "https://www.linkedin.com/company/helloaura/"
+              ]
+            })
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-          <Analytics />
+        <Analytics />
       </body>
     </html>
   );
