@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./
 import { Button } from "./ui/button";
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { AnimatedSection, StaggeredContainer } from "./AnimatedSection";
+import { AnimatedSection } from "./AnimatedSection";
 
 export function FAQ() {
   const faqs = [
