@@ -13,13 +13,13 @@ interface AnimatedSectionProps {
   threshold?: number;
 }
 
-export function AnimatedSection({ 
-  children, 
-  className = '', 
+export function AnimatedSection({
+  children,
+  className = '',
   delay = 0,
   direction = 'up',
   duration = 0.6,
-  threshold = 0.1 
+  threshold = 0.1
 }: AnimatedSectionProps) {
   const [ref, inView] = useInView({
     threshold: threshold,
@@ -61,14 +61,14 @@ export function AnimatedSection({
 }
 
 // Staggered animation for multiple children
-export function StaggeredContainer({ 
-  children, 
-  className = '', 
-  staggerDelay = 0.1 
-}: { 
-  children: ReactNode[], 
-  className?: string, 
-  staggerDelay?: number 
+export function StaggeredContainer({
+  children,
+  className = '',
+  staggerDelay = 0.1
+}: {
+  children: ReactNode[],
+  className?: string,
+  staggerDelay?: number
 }) {
   const [ref, inView] = useInView({
     threshold: 0.1,
@@ -87,15 +87,15 @@ export function StaggeredContainer({
   };
 
   const item = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 60,
       transition: {
         ease: [0.25, 0.25, 0, 1] as [number, number, number, number],
       }
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
@@ -112,12 +112,12 @@ export function StaggeredContainer({
       animate={inView ? "visible" : "hidden"}
       className={className}
     >
-      {Array.isArray(children) 
+      {Array.isArray(children)
         ? children.map((child, index) => (
-            <motion.div key={index} variants={item}>
-              {child}
-            </motion.div>
-          ))
+          <motion.div key={index} variants={item}>
+            {child}
+          </motion.div>
+        ))
         : <motion.div variants={item}>{children}</motion.div>
       }
     </motion.div>
