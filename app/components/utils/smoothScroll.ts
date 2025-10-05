@@ -4,7 +4,7 @@ export const smoothScrollTo = (targetId: string) => {
   const target = document.getElementById(targetId.replace('#', ''));
   
   if (target) {
-    const headerOffset = 80; // Height of fixed header
+    const headerOffset = 80;
     const elementPosition = target.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 

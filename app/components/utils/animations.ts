@@ -6,7 +6,7 @@ export const animationConfig = {
     elastic: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
     bounce: [0.68, -0.55, 0.265, 1.55] as [number, number, number, number],
   },
-  
+
   // Duration presets
   duration: {
     fast: 0.3,
@@ -14,15 +14,13 @@ export const animationConfig = {
     slow: 0.8,
     verySlow: 1.2,
   },
-  
-  // Stagger delays
+
   stagger: {
     fast: 0.1,
     normal: 0.15,
     slow: 0.2,
   },
-  
-  // Common animation variants
+
   variants: {
     fadeIn: {
       hidden: { opacity: 0 },
@@ -49,7 +47,7 @@ export const animationConfig = {
       visible: { opacity: 1, scale: 1 },
     },
   },
-  
+
   // Hover effects
   hover: {
     lift: {
@@ -66,12 +64,12 @@ export const animationConfig = {
       transition: { duration: 0.3 },
     },
   },
-  
+
   // Button animations
   button: {
     tap: { scale: 0.95 },
-    hover: { 
-      scale: 1.05, 
+    hover: {
+      scale: 1.05,
       y: -2,
       transition: { duration: 0.2 },
     },
