@@ -6,13 +6,79 @@ import { Textarea } from "./ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { Label } from "./ui/label";
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from "lucide-react";
+import { useForm } from "@formspree/react";
+import { useState, useEffect } from "react";
 
 export function Contact() {
+  const [state, handleSubmit] = useForm("mvoezpyj");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    service: "",
+    message: ""
+  });
+  const [errors, setErrors] = useState({
+    firstName: false,
+    email: false,
+    company: false,
+    service: false,
+    message: false
+  });
+
+  // Clear form when submission succeeds
+  useEffect(() => {
+    if (state.succeeded) {
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        service: "",
+        message: ""
+      });
+      setErrors({
+        firstName: false,
+        email: false,
+        company: false,
+        service: false,
+        message: false
+      });
+    }
+  }, [state.succeeded]);
+
+  const validateForm = () => {
+    const newErrors = {
+      firstName: !formData.firstName.trim(),
+      email: !formData.email.trim() || !formData.email.includes('@'),
+      company: !formData.company.trim(),
+      service: !formData.service.trim(),
+      message: !formData.message.trim()
+    };
+    setErrors(newErrors);
+    return !Object.values(newErrors).some(error => error);
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    // Clear error when user starts typing
+    if (errors[field as keyof typeof errors]) {
+      setErrors(prev => ({ ...prev, [field]: false }));
+    }
+  };
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (validateForm()) {
+      await handleSubmit(e);
+    }
+  };
   const contactInfo = [
     {
       icon: Mail,
       title: "Email Us",
-      content: "hello@helloaura.com",
+      content: "hello@helloaura.agency",
       description: "Send us an email anytime"
     },
     {
@@ -75,91 +141,127 @@ export function Contact() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="firstName" className="light:text-gray-400 text-gray-300">First Name</Label>
-                  <Input
-                    id="firstName"
-                    placeholder="John"
-                    className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black  placeholder-gray-400 focus:border-white/40 light:focus:border-black/40"
-                  />
+              {state.succeeded && (
+                <div className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 border border-green-300 dark:bg-gray-800 dark:text-green-400" role="alert">
+                  <span className="font-medium">Success!</span> Thank you for contacting us! We&apos;ll get back to you within 4 hours.
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="lastName" className="light:text-gray-400 text-gray-300">Last Name</Label>
-                  <Input
-                    id="lastName"
-                    placeholder="Doe"
-                    className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40"
-                  />
+              )}
+              
+              <form onSubmit={onSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName" className="light:text-gray-400 text-gray-300">
+                      First Name <span className="text-red-500">*</span>
+                    </Label>
+                    <Input
+                      id="firstName"
+                      name="firstName"
+                      placeholder="John"
+                      value={formData.firstName}
+                      onChange={(e) => handleInputChange('firstName', e.target.value)}
+                      className={`bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40 ${errors.firstName ? 'border-red-500' : ''}`}
+                      required
+                    />
+                    {errors.firstName && <p className="text-xs text-red-500">First name is required</p>}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName" className="light:text-gray-400 text-gray-300">Last Name</Label>
+                    <Input
+                      id="lastName"
+                      name="lastName"
+                      placeholder="Doe"
+                      value={formData.lastName}
+                      onChange={(e) => handleInputChange('lastName', e.target.value)}
+                      className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40"
+                    />
+                  </div>
                 </div>
-              </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="email" className="light:text-gray-400 text-gray-300">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="john@example.com"
-                  className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40"
-                />
-              </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="light:text-gray-400 text-gray-300">
+                    Email <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    className={`bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40 ${errors.email ? 'border-red-500' : ''}`}
+                    required
+                  />
+                  {errors.email && <p className="text-xs text-red-500">Valid email is required</p>}
+                </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="company" className="light:text-gray-400 text-gray-300">Company</Label>
-                <Input
-                  id="company"
-                  placeholder="Your Company"
-                  className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40"
-                />
-              </div>
+                <div className="space-y-2">
+                  <Label htmlFor="company" className="light:text-gray-400 text-gray-300">
+                    Company <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
+                    id="company"
+                    name="company"
+                    placeholder="Your Company"
+                    value={formData.company}
+                    onChange={(e) => handleInputChange('company', e.target.value)}
+                    className={`bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40 ${errors.company ? 'border-red-500' : ''}`}
+                    required
+                  />
+                  {errors.company && <p className="text-xs text-red-500">Company is required</p>}
+                </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="service" className="light:text-gray-400 text-gray-300">Service Needed</Label>
-                <Select>
-                  <SelectTrigger className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black">
-                    <SelectValue placeholder="Select a service" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-black border-white/20 light:border-black/20">
-                    <SelectItem value="social-media">Social Media Marketing</SelectItem>
-                    <SelectItem value="performance-marketing">Performance Marketing</SelectItem>
-                    <SelectItem value="web-development">Web Development UI/UX</SelectItem>
-                    <SelectItem value="production">Production</SelectItem>
-                    <SelectItem value="creative">Creative</SelectItem>
-                    <SelectItem value="branding">Branding</SelectItem>
-                    <SelectItem value="complete-package">Complete Package</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+                <div className="space-y-2">
+                  <Label htmlFor="service" className="light:text-gray-400 text-gray-300">
+                    Service Needed <span className="text-red-500">*</span>
+                  </Label>
+                  <Select
+                    name="service"
+                    value={formData.service}
+                    onValueChange={(value) => handleInputChange('service', value)}
+                    required
+                  >
+                    <SelectTrigger className={`bg-white/10 border-white/20 light:border-black/20 text-white light:text-black ${errors.service ? 'border-red-500' : ''}`}>
+                      <SelectValue placeholder="Select a service" />
+                    </SelectTrigger>
+                    <SelectContent className="border-white/20 light:border-black/20">
+                      <SelectItem value="social-media">Social Media Marketing</SelectItem>
+                      <SelectItem value="performance-marketing">Performance Marketing</SelectItem>
+                      <SelectItem value="web-development">Web Development UI/UX</SelectItem>
+                      <SelectItem value="production">Production</SelectItem>
+                      <SelectItem value="creative">Creative</SelectItem>
+                      <SelectItem value="branding">Branding</SelectItem>
+                      <SelectItem value="complete-package">Complete Package</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  {errors.service && <p className="text-xs text-red-500">Service selection is required</p>}
+                </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="budget" className="light:text-gray-400 text-gray-300">Project Budget</Label>
-                <Select>
-                  <SelectTrigger className="bg-white/10 border-white/20 light:border-black/20 text-white light:text-black">
-                    <SelectValue placeholder="Select budget range" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-black border-white/20 light:border-black/20">
-                    <SelectItem value="5k-15k">$5,000 - $15,000</SelectItem>
-                    <SelectItem value="15k-30k">$15,000 - $30,000</SelectItem>
-                    <SelectItem value="30k-60k">$30,000 - $60,000</SelectItem>
-                    <SelectItem value="60k-100k">$60,000 - $100,000</SelectItem>
-                    <SelectItem value="100k+">$100,000+</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="light:text-gray-400 text-gray-300">
+                    Tell Us Your Story <span className="text-red-500">*</span>
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="What&apos;s your brand story? What are your goals? How can we help you make an impact?"
+                    value={formData.message}
+                    onChange={(e) => handleInputChange('message', e.target.value)}
+                    className={`min-h-[120px] bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40 ${errors.message ? 'border-red-500' : ''}`}
+                    required
+                  />
+                  {errors.message && <p className="text-xs text-red-500">Message is required</p>}
+                </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="message" className="light:text-gray-400 text-gray-300">Tell Us Your Story</Label>
-                <Textarea
-                  id="message"
-                  placeholder="What&apos;s your brand story? What are your goals? How can we help you make an impact?"
-                  className="min-h-[120px] bg-white/10 border-white/20 light:border-black/20 text-white light:text-black placeholder-gray-400 focus:border-white/40 light:focus:border-black/40"
-                />
-              </div>
-
-              <Button className="w-full cursor-pointer bg-white light:bg-black text-black light:text-white hover:bg-gray-200 text-lg py-6 transition-all duration-300 transform hover:scale-105">
-                Send Message
-                <Send className="ml-2 w-5 h-5" />
-              </Button>
+                <Button 
+                  type="submit"
+                  disabled={state.submitting}
+                  className="w-full cursor-pointer bg-white light:bg-black text-black light:text-white hover:bg-gray-200 text-lg py-6 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {state.submitting ? 'Sending...' : 'Send Message'}
+                  {!state.submitting && <Send className="ml-2 w-5 h-5" />}
+                </Button>
+              </form>
             </CardContent>
           </Card>
 
