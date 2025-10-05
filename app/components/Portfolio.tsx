@@ -79,8 +79,8 @@ export function Portfolio() {
             </span>
           </h2>
           <p className="text-xl text-gray-300 dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            At Hello Aura, we bring ideas to life with strategy, creativity, and precision. 
-            Our portfolio reflects the diverse range of clients we&apos;ve worked with and the 
+            At Hello Aura, we bring ideas to life with strategy, creativity, and precision.
+            Our portfolio reflects the diverse range of clients we&apos;ve worked with and the
             impactful solutions we&apos;ve delivered.
           </p>
         </AnimatedSection>
@@ -90,7 +90,7 @@ export function Portfolio() {
           {portfolioItems.map((item, index) => (
             <motion.div
               key={index}
-              whileHover={{ 
+              whileHover={{
                 y: -8,
                 scale: 1.02,
               }}
@@ -124,20 +124,20 @@ export function Portfolio() {
                     </div>
                   </div>
 
-                {/* Metrics */}
-                <div className="space-y-2">
-                  <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600 font-medium">Metrics</div>
-                  <div className="grid grid-cols-1 gap-2">
-                    {item.metrics.map((metric, metricIndex) => (
-                      <div key={metricIndex} className="flex items-center text-sm text-gray-300 dark:text-gray-400 light:text-gray-600">
-                        <div className="w-2 h-2 bg-white/60 light:bg-black/60 rounded-full mr-3"></div>
-                        {metric}
-                      </div>
-                    ))}
+                  {/* Metrics */}
+                  <div className="space-y-2">
+                    <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600 font-medium">Metrics</div>
+                    <div className="grid grid-cols-1 gap-2">
+                      {item.metrics.map((metric, metricIndex) => (
+                        <div key={metricIndex} className="flex items-center text-sm text-gray-300 dark:text-gray-400 light:text-gray-600">
+                          <div className="w-2 h-2 bg-white/60 light:bg-black/60 rounded-full mr-3"></div>
+                          {metric}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </StaggeredContainer>

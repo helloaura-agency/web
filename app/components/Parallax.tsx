@@ -15,7 +15,7 @@ export function Parallax({ children, speed = 0.5, className = '' }: ParallaxProp
     target: ref,
     offset: ["start end", "end start"]
   });
-  
+
   const y = useTransform(scrollYProgress, [0, 1], [0, speed * -100]);
 
   return (
@@ -29,10 +29,10 @@ export function Parallax({ children, speed = 0.5, className = '' }: ParallaxProp
   );
 }
 
-export function ParallaxText({ 
-  children, 
-  speed = 0.5, 
-  className = '' 
+export function ParallaxText({
+  children,
+  speed = 0.5,
+  className = ''
 }: {
   children: React.ReactNode;
   speed?: number;
@@ -43,7 +43,7 @@ export function ParallaxText({
     target: ref,
     offset: ["start end", "end start"]
   });
-  
+
   const y = useTransform(scrollYProgress, [0, 1], [0, speed * -200]);
 
   return (

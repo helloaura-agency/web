@@ -21,7 +21,7 @@ export function Hero() {
       {/* 3D floating elements */}
       <div className="absolute inset-0 overflow-hidden">
         <Parallax speed={0.4}>
-          <motion.div 
+          <motion.div
             className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/5 dark:bg-white/5 light:bg-black/5 rounded-full blur-3xl transform rotate-45"
             animate={{
               scale: [1, 1.2, 1],
@@ -34,9 +34,9 @@ export function Hero() {
             }}
           />
         </Parallax>
-        
+
         <Parallax speed={0.6}>
-          <motion.div 
+          <motion.div
             className="absolute top-1/3 right-1/4 w-72 h-72 bg-white/3 dark:bg-white/3 light:bg-black/3 rounded-full blur-3xl transform -rotate-12"
             animate={{
               scale: [1, 1.1, 1],
@@ -50,9 +50,9 @@ export function Hero() {
             }}
           />
         </Parallax>
-        
+
         <Parallax speed={0.2}>
-          <motion.div 
+          <motion.div
             className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-white/4 dark:bg-white/4 light:bg-black/4 rounded-full blur-3xl transform rotate-12"
             animate={{
               scale: [1, 1.3, 1],
@@ -68,7 +68,7 @@ export function Hero() {
         </Parallax>
 
         {/* 3D geometric shapes */}
-        <motion.div 
+        <motion.div
           className="absolute top-20 right-20 w-16 h-16 border border-white/20 dark:border-white/20 light:border-black/20 rotate-45"
           animate={{
             rotate: [45, 405],
@@ -79,7 +79,7 @@ export function Hero() {
             ease: "linear",
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-32 left-16 w-12 h-12 border-2 border-white/30 dark:border-white/30 light:border-black/30 rounded-full"
           animate={{
             y: [0, -20, 0],
@@ -90,7 +90,7 @@ export function Hero() {
             ease: "easeInOut",
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute top-1/2 left-8 w-8 h-8 bg-white/10 dark:bg-white/10 light:bg-black/10 rotate-45"
           animate={{
             scale: [1, 1.2, 1],

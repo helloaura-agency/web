@@ -9,8 +9,8 @@ interface MagneticButtonProps {
   strength?: number;
 }
 
-export function MagneticButton({ 
-  children, 
+export function MagneticButton({
+  children,
   className = "",
   strength = 0.3
 }: MagneticButtonProps) {
@@ -23,10 +23,10 @@ export function MagneticButton({
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
+
     const deltaX = (e.clientX - centerX) * strength;
     const deltaY = (e.clientY - centerY) * strength;
-    
+
     setPosition({ x: deltaX, y: deltaY });
   };
 
