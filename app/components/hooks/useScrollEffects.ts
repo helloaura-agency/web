@@ -1,9 +1,18 @@
 "use client";
 
-import { useScroll, useTransform, useVelocity } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState
+} from "react";
+import {
+  useScroll,
+  useTransform,
+  useVelocity
+} from "framer-motion";
 
 export function useScrollVelocity() {
+
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const [velocity, setVelocity] = useState(0);
@@ -12,7 +21,6 @@ export function useScrollVelocity() {
     const unsubscribe = scrollVelocity.onChange((latest) => {
       setVelocity(latest);
     });
-
     return unsubscribe;
   }, [scrollVelocity]);
 
@@ -39,11 +47,11 @@ export function useScrollDirection() {
     const updateScrollDirection = () => {
       const scrollY = window.scrollY;
       const direction = scrollY > lastScrollY ? "down" : "up";
-      
+
       if (direction !== scrollDirection && Math.abs(scrollY - lastScrollY) > 10) {
         setScrollDirection(direction);
       }
-      
+
       setLastScrollY(scrollY > 0 ? scrollY : 0);
     };
 
